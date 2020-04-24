@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Consulta Medica</string>
+    <string name="infoInitial">Bem Vindo à sua APP de Consulta Médica</string>
+    <string name="btnPatient">Paciente</string>
+    <string name="btnAppointment">Consultas</string>
+    <string name="textVPatient">Bem Vindo à Aba do Paciente</string>
+    <string name="btnAddPatient">Adicionar Paciente</string>
+    <string name="btnEditPatient">Editar Paciente</string>
+    <string name="btnCheckPatient">Consultar Paciente</string>
+    <string name="btnDeletePatient">Apagar Paciente</string>
+</resources>

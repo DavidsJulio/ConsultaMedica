@@ -6,6 +6,7 @@
     <string name="textVPatient">Welcome to your Patient Tab</string>
     <string name="btnAddPatient">Add Patient</string>
     <string name="btnEditPatient">Edit Patient</string>
-    <string name="btnCheckPatient">Consultar Paciente</string>
+    <string name="btnCheckPatient">Check Patient</string>
     <string name="btnDeletePatient">Delete Patient</string>
+    <string name="ViewLogo">logo</string>
 </resources>

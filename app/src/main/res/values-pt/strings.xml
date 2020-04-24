@@ -9,4 +9,5 @@
     <string name="btnEditPatient">Editar Paciente</string>
     <string name="btnCheckPatient">Consultar Paciente</string>
     <string name="btnDeletePatient">Apagar Paciente</string>
+    <string name="ViewLogo">logo</string>
 </resources>

@@ -17,10 +17,15 @@ public class MainActivity extends AppCompatActivity {
     public void btnPatient (View view){
 
         Intent intentPatient = new Intent (this, PatientActivity.class);
-        //Intent intentAppointment = new Intent (this, PatientActivity.class);
-
 
         startActivity(intentPatient);
-        //startActivity(intentAppointment);
+
+    }
+
+    public void btnAppointment (View view){
+
+        Intent intentAppointment = new Intent (this, AppointmentActivity.class);
+
+        startActivity(intentAppointment);
     }
 }

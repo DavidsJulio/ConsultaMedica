@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Medical Appointment</string>
-    <string name="infoInitial">Welcome to Your Appointment APP!</string>
+    <string name="infoInitial">Welcome to Your Medical Appointment APP!</string>
     <string name="btnPatient">Patient</string>
     <string name="btnAppointment">Appointment</string>
     <string name="textVPatient">Welcome to your Patient Tab</string>
@@ -9,4 +9,9 @@
     <string name="btnCheckPatient">Check Patient</string>
     <string name="btnDeletePatient">Delete Patient</string>
     <string name="ViewLogo">logo</string>
+    <string name="textVAppointment">Welcome to you Medical Appointment Tab</string>
+    <string name="btnAddApoint">Add Medical Appointment</string>
+    <string name="btnCheckAppoint">Check Medical Appointments</string>
+    <string name="btnEditAppoint">Edit Your Medical Appointments</string>
+    <string name="btnDeleteAppoint">Delete Medical Appointment</string>
 </resources>

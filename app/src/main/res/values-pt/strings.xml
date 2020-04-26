@@ -10,4 +10,9 @@
     <string name="btnCheckPatient">Consultar Paciente</string>
     <string name="btnDeletePatient">Apagar Paciente</string>
     <string name="ViewLogo">logo</string>
+    <string name="textVAppointment">Bem Vindo à Aba de Consultas</string>
+    <string name="btnAddApoint">Adicionar Consulta Médica</string>
+    <string name="btnCheckAppoint">Consultar Consultas Médicas</string>
+    <string name="btnEditAppoint">Editar Consultas Médicas</string>
+    <string name="btnDeleteAppoint">Apagar Consulta Médica</string>
 </resources>

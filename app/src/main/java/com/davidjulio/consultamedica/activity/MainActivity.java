@@ -1,10 +1,12 @@
-package com.davidjulio.consultamedica;
+package com.davidjulio.consultamedica.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.davidjulio.consultamedica.R;
 
 public class MainActivity extends AppCompatActivity {
 

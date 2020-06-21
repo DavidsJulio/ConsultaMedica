@@ -1,8 +1,10 @@
-package com.davidjulio.consultamedica;
+package com.davidjulio.consultamedica.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.davidjulio.consultamedica.R;
 
 public class AppointmentActivity extends AppCompatActivity {
 

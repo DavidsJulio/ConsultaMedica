@@ -48,7 +48,6 @@ public class PatientActivity extends AppCompatActivity {
         patientList.add(patient1);
 
 
-
         //Configurar Adapter (para configurar o adapter primeiro é preciso criar uma class)
         adapterPatients = new AdapterPatients( patientList ); //passar a lista
 

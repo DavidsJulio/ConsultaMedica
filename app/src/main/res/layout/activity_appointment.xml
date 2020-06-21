@@ -10,6 +10,7 @@
         android:id="@+id/imageViewInitial3"
         android:layout_width="0dp"
         android:layout_height="124dp"
+        android:layout_margin="8dp"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/ViewLogo"
         android:foregroundGravity="center_horizontal"
@@ -23,6 +24,7 @@
         android:id="@+id/textVAppoint1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         android:layout_marginTop="16dp"
         android:gravity="center_horizontal"
         android:text="@string/textVAppointment"
@@ -31,45 +33,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewInitial3" />
-
-    <Button
-        android:id="@+id/btnAddAppoint"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/btnAddApoint"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textVAppoint1" />
-
-    <Button
-        android:id="@+id/btnCheckAppoint"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/btnCheckAppoint"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAddAppoint" />
-
-    <Button
-        android:id="@+id/btnEditAppoint"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/btnEditAppoint"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCheckAppoint" />
-
-    <Button
-        android:id="@+id/btnDeleteAppoint"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/btnDeleteAppoint"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnEditAppoint" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

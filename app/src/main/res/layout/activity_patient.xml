@@ -10,6 +10,7 @@
         android:id="@+id/imageViewInitial2"
         android:layout_width="0dp"
         android:layout_height="124dp"
+        android:layout_margin="9dp"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/ViewLogo"
         android:foregroundGravity="center_horizontal"
@@ -23,6 +24,7 @@
         android:id="@+id/textViewPatient1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_margin="9dp"
         android:layout_marginTop="16dp"
         android:gravity="center_horizontal"
         android:text="@string/textVPatient"
@@ -32,47 +34,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewInitial2" />
 
-    <Button
-        android:id="@+id/btnCheckPatient"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewPatients"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/btnCheckPatient"
+        android:layout_margin="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnEditPatient" />
-
-    <Button
-        android:id="@+id/btnAddPatient"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/btnAddPatient"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewPatient1" />
 
-    <Button
-        android:id="@+id/btnEditPatient"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/btnEditPatient"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAddPatient" />
-
-    <Button
-        android:id="@+id/btnDeletePatient"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/btnDeletePatient"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCheckPatient" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,7 +18,9 @@ public class PatientActivity extends AppCompatActivity {
 
         recyclerViewPatients = findViewById(R.id.recyclerViewPatients); //chamar recycler
 
-        //Configurar Adapter
+        //Configurar Adapter (para configurar o adapter primeiro é preciso criar uma class)
+
+
 
         //Configurar RecyclerView
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext()); //Pode ser linear/grid

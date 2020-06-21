@@ -17,9 +17,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="4"
             android:gravity="start"
+            android:text="David Julio"
             android:textSize="18sp"
-            android:textStyle="bold"
-            tools:text="David Julio" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvPhonePatient"
@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="end"
-            tools:text="961234567" />
+            android:text="91234566" />
     </LinearLayout>
 
     <LinearLayout
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="start"
-            tools:text="12/12/1997" />
+            android:text="12/12/1997" />
 
         <TextView
             android:id="@+id/tvCityPatient"
@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_horizontal"
-            tools:text="Guarda" />
+            android:text="Guarda" />
 
         <TextView
             android:id="@+id/tvResultPatient"
@@ -57,8 +57,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="end"
+            android:text="Positivo"
             android:textColor="#FD0202"
-            android:textStyle="bold"
-            tools:text="Positivo" />
+            android:textStyle="bold" />
     </LinearLayout>
 </LinearLayout>

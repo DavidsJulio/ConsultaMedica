@@ -15,4 +15,5 @@
     <string name="btnCheckAppoint">Consultar Consultas Médicas</string>
     <string name="btnEditAppoint">Editar Consultas Médicas</string>
     <string name="btnDeleteAppoint">Apagar Consulta Médica</string>
+    <string name="menuAdd">Add</string>
 </resources>

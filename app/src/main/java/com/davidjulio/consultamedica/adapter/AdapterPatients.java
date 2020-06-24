@@ -20,6 +20,7 @@ public class AdapterPatients extends RecyclerView.Adapter <AdapterPatients.MyVie
 
     private List<Patient> patientList;
     public AdapterPatients(List<Patient> patients) { //constructor automatico generate - constructor
+
         this.patientList = patients;
     }
 
@@ -60,7 +61,7 @@ public class AdapterPatients extends RecyclerView.Adapter <AdapterPatients.MyVie
 
         TextView namePatient, phonePatient, bDatePatient, cityPatient, resultPatient;
 
-        public MyViewHolder(@NonNull View itemView) { //construtor criado automáticamente
+        public MyViewHolder(@NonNull View itemView) { //construtor criado automaticamente
             super(itemView);
                         //precisamos do itemView porque é ele que acessa os componentes (id's)
             namePatient = itemView.findViewById(R.id.tvNomePatient);

@@ -15,7 +15,14 @@
     <string name="btnCheckAppoint">Consultar Consultas Médicas</string>
     <string name="btnEditAppoint">Editar Consultas Médicas</string>
     <string name="btnDeleteAppoint">Apagar Consulta Médica</string>
-    <string name="menuAdd">Add</string>
-    <string name="mDelete">Delete</string>
-    <string name="mEdit">Edit</string>
+    <string name="menuAdd">Adicionar</string>
+    <string name="mDelete">Apagar</string>
+    <string name="mEdit">Editar</string>
+    <string name="save">Guardar</string>
+    <string name="patient_name">Nome do Paciente</string>
+    <string name="phone_number">Telemovel</string>
+    <string name="birthay_date">Data de Nascimento</string>
+    <string name="city">Cidade</string>
+    <string name="result">Resultado COVID-19</string>
+    <string name="infoSaved">Guardado</string>
 </resources>

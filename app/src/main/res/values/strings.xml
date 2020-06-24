@@ -15,4 +15,6 @@
     <string name="btnEditAppoint">Edit Your Medical Appointments</string>
     <string name="btnDeleteAppoint">Delete Medical Appointment</string>
     <string name="menuAdd">Add</string>
+    <string name="mDelete">Delete</string>
+    <string name="mEdit">Edit</string>
 </resources>

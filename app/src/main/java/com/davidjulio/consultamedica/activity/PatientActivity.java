@@ -34,7 +34,7 @@ public class PatientActivity extends AppCompatActivity {
 
     public void carregarListaPacientes(){
         //patient
-
+        /*
         Patient patient = new Patient();
         patient.setNamePatient("David Julio");
         patient.setPhonePatient("961234567");
@@ -50,6 +50,8 @@ public class PatientActivity extends AppCompatActivity {
         patient1.setCityPatient("Lisboa");
         patient1.setResultPatient("Negativo");
         patientList.add(patient1);
+
+         */
 
 
         //Configurar Adapter (para configurar o adapter primeiro é preciso criar uma class)
@@ -83,7 +85,6 @@ public class PatientActivity extends AppCompatActivity {
         if (id == R.id.mAdd) {
             Intent intentAddPatient = new Intent(this, AddPatientActivity.class);
             startActivity(intentAddPatient);
-
         }
         return super.onOptionsItemSelected(item);
     }

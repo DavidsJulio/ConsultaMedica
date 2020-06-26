@@ -6,12 +6,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.davidjulio.consultamedica.R;
 import com.davidjulio.consultamedica.adapter.AdapterPatients;
+import com.davidjulio.consultamedica.helper.DbHelper;
 import com.davidjulio.consultamedica.model.Patient;
 
 import java.util.ArrayList;
@@ -19,56 +22,28 @@ import java.util.List;
 
 public class PatientActivity extends AppCompatActivity {
 
+    private SQLiteDatabase mydb; //chamar a db
+
     private RecyclerView recyclerViewPatients;
     private AdapterPatients adapterPatients; //devia ser patientsAdapter
-    private List<Patient> patientList = new ArrayList<>(); //lista de pacientes
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient);
+
+        DbHelper dbHelper = new DbHelper(this); //inicializar a dbHelper
+        mydb = dbHelper.getWritableDatabase(); //como queremos inserir dados write
+
         recyclerViewPatients = findViewById(R.id.recyclerViewPatients); //chamar recycler
-
-
-    }
-
-    public void carregarListaPacientes(){
-        //patient
-        /*
-        Patient patient = new Patient();
-        patient.setNamePatient("David Julio");
-        patient.setPhonePatient("961234567");
-        patient.setbDatePatient("12/12/1997");
-        patient.setCityPatient("Guarda");
-        patient.setResultPatient("Positivo");
-        patientList.add(patient);
-
-        Patient patient1 = new Patient();
-        patient1.setNamePatient("David Julio");
-        patient1.setPhonePatient("931234567");
-        patient1.setbDatePatient("12/03/2000");
-        patient1.setCityPatient("Lisboa");
-        patient1.setResultPatient("Negativo");
-        patientList.add(patient1);
-
-         */
-
-
-        //Configurar Adapter (para configurar o adapter primeiro é preciso criar uma class)
-        adapterPatients = new AdapterPatients( patientList ); //passar a lista
-
-        //Configurar RecyclerView
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext()); //Pode ser linear/grid
-        recyclerViewPatients.setLayoutManager( layoutManager );
-        recyclerViewPatients.setHasFixedSize( true ); //otimizar o recyclerView com tamanho fixo, recomendado pela google
-        recyclerViewPatients.setAdapter( adapterPatients ); //o adapter recebe os dados, formata e utiliza no Recycler
+        recyclerViewPatients.setLayoutManager(new LinearLayoutManager(this));
+        adapterPatients = new AdapterPatients(this, getAllPatients()); //passamos o contexto e chamamos o cursor da função getAllPatients
+        recyclerViewPatients.setAdapter(adapterPatients); //passamos o adapter na recyc
     }
 
     @Override
     protected void onStart() {
-        carregarListaPacientes(); //chamar função
         super.onStart();
-
     }
 
     @Override
@@ -88,4 +63,17 @@ public class PatientActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+    public Cursor getAllPatients(){ //este cursor vai recolher todos os dados da nossa tabela
+        return mydb.query(DbHelper.TABELA_PACIENTE, //passamos a tabela para saber a que tabela pertence
+                null,
+                null,
+                null,
+                null, //valores a null porque não são utilizados na query
+                null,
+                null);
+    }
+
+
 }

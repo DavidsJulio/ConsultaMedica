@@ -10,10 +10,14 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.davidjulio.consultamedica.R;
+import com.davidjulio.consultamedica.adapter.AdapterPatients;
 import com.davidjulio.consultamedica.helper.DbHelper;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class AddPatientActivity extends AppCompatActivity {
+
+    AdapterPatients adapterPatients;
+    PatientActivity patientActivity;
 
     TextInputEditText tiName, tiPhone, tiBdate, tiCity, tiResult;
     DbHelper myDb;
@@ -63,5 +67,6 @@ public class AddPatientActivity extends AppCompatActivity {
                                 tiBdate.getText().toString().trim(),
                                 tiCity.getText().toString().trim(),
                                 tiResult.getText().toString().trim());
+        adapterPatients.mudarCursor(patientActivity.getAllPatients());//passar o novo cursor com a função para atualizar
     }
 }

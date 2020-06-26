@@ -1,5 +1,7 @@
 package com.davidjulio.consultamedica.adapter;
 
+import android.content.Context;
+import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,6 +9,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.davidjulio.consultamedica.R;
+import com.davidjulio.consultamedica.helper.DbHelper;
 import com.davidjulio.consultamedica.model.Patient;
 
 import java.util.List;
@@ -18,10 +21,14 @@ public class AdapterPatients extends RecyclerView.Adapter <AdapterPatients.MyVie
     //recebe uma viewHolder (os itens que passam no recyclerView são exibidos numa ViewHolder)
     //o recycler view tem a função de reciclar as visualizações
 
-    private List<Patient> patientList;
-    public AdapterPatients(List<Patient> patients) { //constructor automatico generate - constructor
+    DbHelper mybd; //variavel da dbhelper para poder chamar os index da coluna
 
-        this.patientList = patients;
+    private Context pContext;
+    private Cursor pCursor;
+
+    public AdapterPatients(Context context, Cursor cursor) { //constructor automatico generate - constructor (alterado)
+        pContext = context; //a variavel a receber os respetivos valores
+        pCursor = cursor;
     }
 
     @NonNull
@@ -40,21 +47,27 @@ public class AdapterPatients extends RecyclerView.Adapter <AdapterPatients.MyVie
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         //exibe os elementos das visualizações
 
-        //TODO: ligar o on bind à bd
-        Patient patient = patientList.get(position);
+        if (!pCursor.moveToPosition(position)){ //condição para garantir que o cursor consegue mover para a "position"
+            return;
+        }
 
-        holder.namePatient.setText(patient.getNamePatient());
-        holder.phonePatient.setText(patient.getPhonePatient());
-        holder.bDatePatient.setText(patient.getbDatePatient());
-        holder.cityPatient.setText(patient.getCityPatient());
-        holder.resultPatient.setText(patient.getResultPatient());
+        String name = pCursor.getString(pCursor.getColumnIndex(mybd.NOME_PACIENTE)); //chamamos getString para ler a string da nossa BD, chamamos o nosso cursor
+        String tele = pCursor.getString(pCursor.getColumnIndex(mybd.TELE_PACIENTE)); //e vamos buscar o columnIndex (numero correspondente à tabela pertendida)
+        String data = pCursor.getString(pCursor.getColumnIndex(mybd.DATA_PACIENTE)); //neste caso as tabelas encontram se na DbHelper
+        String city = pCursor.getString(pCursor.getColumnIndex(mybd.CIDADE_PACIENTE));
+        String resultado = pCursor.getString(pCursor.getColumnIndex(mybd.RESULTADO_PACIENTE));
 
+        holder.namePatient.setText(name); //vamos buscar o holder das respetivas tv e colocamos o valor pretendido
+        holder.phonePatient.setText(tele);
+        holder.bDatePatient.setText(data);
+        holder.cityPatient.setText(city);
+        holder.resultPatient.setText(resultado);
     }
 
     @Override
     public int getItemCount() { //quantidade de items da recyclerView
 
-        return this.patientList.size(); //quantidade de itens dentro da lista
+        return pCursor.getCount(); //contagem dos dados da bd
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
@@ -71,5 +84,15 @@ public class AdapterPatients extends RecyclerView.Adapter <AdapterPatients.MyVie
             resultPatient = itemView.findViewById(R.id.tvResultPatient);
 
         }
-   }
+    }
+
+    public void mudarCursor(Cursor newCursor){ //
+        if(pCursor != null)
+            pCursor.close(); //se o cursor que temos não é null fechamos
+
+        pCursor = newCursor; //atribuimos o novo cursor ao já existente
+
+        if (newCursor != null)
+            notifyDataSetChanged(); //este dado vai atualizar a recycler view
+    }
 }

@@ -1,6 +1,7 @@
 package com.davidjulio.consultamedica.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.davidjulio.consultamedica.R;
+import com.davidjulio.consultamedica.activity.AddPatientActivity;
 import com.davidjulio.consultamedica.helper.DbHelper;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -85,6 +87,10 @@ public class AdapterPatients extends RecyclerView.Adapter <AdapterPatients.MyVie
 
         @Override
         public void onClick(View v) {
+            Intent intent = new Intent(pContext, AddPatientActivity.class);
+            pContext.startActivity(intent);
+
+            /* DECIDIR SE METER, permite duplo clique
             if (viewHolderPaciente == this) {
                 return;
             }
@@ -94,7 +100,10 @@ public class AdapterPatients extends RecyclerView.Adapter <AdapterPatients.MyVie
             viewHolderPaciente = this;
             selecionaPaciente();
 
+             */
+
         }
+        /*
         public void selecionaPaciente(){
             itemView.setBackgroundResource(R.color.colorAccent);
 
@@ -103,6 +112,8 @@ public class AdapterPatients extends RecyclerView.Adapter <AdapterPatients.MyVie
         private void deSelecionaPaciente(){
             itemView.setBackgroundResource(R.color.colorWhite);
         }
+
+         */
     }
 
     public void mudarCursor(Cursor newCursor){ //

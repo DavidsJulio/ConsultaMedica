@@ -2,6 +2,7 @@ package com.davidjulio.consultamedica.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -38,6 +39,7 @@ public class PatientActivity extends AppCompatActivity {
         recyclerViewPatients = findViewById(R.id.recyclerViewPatients); //chamar recycler
         recyclerViewPatients.setLayoutManager(new LinearLayoutManager(this));
         adapterPatients = new AdapterPatients(this, getAllPatients()); //passamos o contexto e chamamos o cursor da função getAllPatients
+        recyclerViewPatients.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL)); //divisor
         recyclerViewPatients.setAdapter(adapterPatients); //passamos o adapter na recyc
     }
 

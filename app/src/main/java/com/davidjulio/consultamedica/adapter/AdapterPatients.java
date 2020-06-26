@@ -5,15 +5,10 @@ import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.davidjulio.consultamedica.R;
 import com.davidjulio.consultamedica.helper.DbHelper;
-import com.davidjulio.consultamedica.model.Patient;
-
-import java.util.List;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -25,6 +20,7 @@ public class AdapterPatients extends RecyclerView.Adapter <AdapterPatients.MyVie
 
     private Context pContext;
     private Cursor pCursor;
+    private MyViewHolder viewHolderPaciente = null;
 
     public AdapterPatients(Context context, Cursor cursor) { //constructor automatico generate - constructor (alterado)
         pContext = context; //a variavel a receber os respetivos valores
@@ -70,7 +66,7 @@ public class AdapterPatients extends RecyclerView.Adapter <AdapterPatients.MyVie
         return pCursor.getCount(); //contagem dos dados da bd
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         TextView namePatient, phonePatient, bDatePatient, cityPatient, resultPatient;
 
@@ -83,6 +79,29 @@ public class AdapterPatients extends RecyclerView.Adapter <AdapterPatients.MyVie
             cityPatient = itemView.findViewById(R.id.tvCityPatient);
             resultPatient = itemView.findViewById(R.id.tvResultPatient);
 
+            itemView.setOnClickListener(this);
+
+        }
+
+        @Override
+        public void onClick(View v) {
+            if (viewHolderPaciente == this) {
+                return;
+            }
+            if (viewHolderPaciente != null) {
+                viewHolderPaciente.deSelecionaPaciente();
+            }
+            viewHolderPaciente = this;
+            selecionaPaciente();
+
+        }
+        public void selecionaPaciente(){
+            itemView.setBackgroundResource(R.color.colorAccent);
+
+        }
+
+        private void deSelecionaPaciente(){
+            itemView.setBackgroundResource(R.color.colorWhite);
         }
     }
 

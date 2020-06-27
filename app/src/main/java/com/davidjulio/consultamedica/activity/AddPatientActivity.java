@@ -54,7 +54,7 @@ public class AddPatientActivity extends AppCompatActivity {
             Intent intentSavePatient = new Intent(this, PatientActivity.class);
             startActivity(intentSavePatient);
 
-            Toast.makeText(this, R.string.infoSaved, Toast.LENGTH_LONG).show();
+           // Toast.makeText(this, R.string.infoSaved, Toast.LENGTH_LONG).show();
 
         }
         return super.onOptionsItemSelected(item);

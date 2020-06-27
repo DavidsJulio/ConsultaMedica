@@ -3,6 +3,7 @@ package com.davidjulio.consultamedica.activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -41,6 +42,18 @@ public class PatientActivity extends AppCompatActivity {
         adapterPatients = new AdapterPatients(this, getAllPatients()); //passamos o contexto e chamamos o cursor da função getAllPatients
         recyclerViewPatients.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL)); //divisor
         recyclerViewPatients.setAdapter(adapterPatients); //passamos o adapter na recyc
+
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) { //uso do itemTouchHelper de modo a apagar os registos sempre que desliza para a esquerda
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                removePatient((long) viewHolder.itemView.getTag()); //chamar função que permite apagar o paciente a partir do id, num getTag()
+            }
+        }).attachToRecyclerView(recyclerViewPatients); //ligar ao recyc
     }
 
     @Override
@@ -77,5 +90,9 @@ public class PatientActivity extends AppCompatActivity {
                 null);
     }
 
+    private void removePatient(long id){ //função para receber o id e aproveitar a função delete da Sqlitadatabase que permite apagar o registo
+        mydb.delete(DbHelper.TABELA_PACIENTE, DbHelper.ID_PACIENTE + "="+ id, null);//qual a linha apagar consoante o id passado
+        adapterPatients.mudarCursor(getAllPatients()); //faz o "refresh" dos registos
+    }
 
 }

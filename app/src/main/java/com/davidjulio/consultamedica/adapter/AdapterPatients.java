@@ -60,6 +60,10 @@ public class AdapterPatients extends RecyclerView.Adapter <AdapterPatients.MyVie
         holder.bDatePatient.setText(data);
         holder.cityPatient.setText(city);
         holder.resultPatient.setText(resultado);
+
+        long id = pCursor.getLong(pCursor.getColumnIndex(mybd.ID_PACIENTE)); //vai buscar o id que é unico
+
+        holder.itemView.setTag(id);//não é visivel mas pode ser usada para identificar o paciente
     }
 
     @Override

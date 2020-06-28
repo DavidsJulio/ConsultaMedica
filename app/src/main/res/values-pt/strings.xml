@@ -25,4 +25,7 @@
     <string name="city">Cidade</string>
     <string name="result">Resultado COVID-19</string>
     <string name="infoSaved">Guardado</string>
+
+    <string name="appoint_date">Data da Consulta</string>
+    <string name="appoint_hour">Hora da Consulta</string>
 </resources>

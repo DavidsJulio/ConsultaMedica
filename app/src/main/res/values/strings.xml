@@ -25,4 +25,6 @@
     <string name="result">Result COVID-19</string>
     <string name="infoSaved">Saved</string>
 
+    <string name="appoint_date">Appointment Date</string>
+    <string name="appoint_hour">Appointment Hour</string>
 </resources>

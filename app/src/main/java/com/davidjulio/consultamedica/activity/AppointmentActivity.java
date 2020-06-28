@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.davidjulio.consultamedica.AddAppointActivity;
 import com.davidjulio.consultamedica.R;
 
 public class AppointmentActivity extends AppCompatActivity {

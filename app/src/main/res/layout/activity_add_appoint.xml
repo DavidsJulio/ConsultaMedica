@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AddAppointActivity">
+    tools:context=".activity.AddAppointActivity">
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -22,18 +22,19 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/tiHourAppoint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/appoint_hour" />
+
         </com.google.android.material.textfield.TextInputLayout>
+
+        <Spinner
+            android:id="@+id/spinnerPatient"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
     </com.google.android.material.textfield.TextInputLayout>
 </LinearLayout>
 

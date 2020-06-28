@@ -27,4 +27,7 @@
 
     <string name="appoint_date">Appointment Date</string>
     <string name="appoint_hour">Appointment Hour</string>
+
+    <string name="appoint_tvDate">Date:</string>
+    <string name="appoint_tvHour">Hour:</string>
 </resources>

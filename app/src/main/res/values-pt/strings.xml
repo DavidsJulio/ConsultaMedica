@@ -28,4 +28,7 @@
 
     <string name="appoint_date">Data da Consulta</string>
     <string name="appoint_hour">Hora da Consulta</string>
+
+    <string name="appoint_tvDate">Data:</string>
+    <string name="appoint_tvHour">Hora:</string>
 </resources>

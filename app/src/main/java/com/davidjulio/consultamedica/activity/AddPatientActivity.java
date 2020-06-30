@@ -67,6 +67,6 @@ public class AddPatientActivity extends AppCompatActivity {
                                 tiBdate.getText().toString().trim(),
                                 tiCity.getText().toString().trim(),
                                 tiResult.getText().toString().trim());
-        adapterPatients.mudarCursor(patientActivity.getAllPatients());//passar o novo cursor com a função para atualizar
+        //adapterPatients.mudarCursor(patientActivity.getAllPatients());//passar o novo cursor com a função para atualizar
     }
 }
